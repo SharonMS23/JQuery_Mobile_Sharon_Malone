@@ -1,0 +1,122 @@
+
+<!Doctype html>
+<html>
+	
+	<head>
+		<meta name="viewport" content="width = device-width, initial-scale=1" charset="utf-8">
+		<link rel="stylesheet" href="jquery.mobile-1.4.4.css">
+
+		<style type="text/css">
+			
+			#ubicacion{
+				width: 100%;
+				height: 300px;
+				margin: 10px 0px;
+			}
+
+			#ubicacionDatos{
+				width: 100%;
+				height: 300px;
+				margin: 10px 0px;
+			}
+
+		</style>
+
+		<script src="jquery-1.11.1.js"></script>
+		<script src="jquery.mobile-1.4.4.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script src="app.js"></script>
+
+	</head>
+
+	<body>
+
+		<div data-role="page" id="index">
+
+			<div data-role="header">
+				<h1>Gestión Hotel</h1>
+			</div>
+			<div data-role="content">
+				<form>
+					<a onclick="cambiarPagina('registro')" class="ui-btn">Registrar Hotel</a>
+					<a id="listado" class="ui-btn">Listar Hoteles</a>
+				</form>
+			</div>
+			<div data-role="footer">
+				<h1>Gestión Hotel</h1>
+			</div>
+			
+		</div>
+
+
+		<div data-role="page" id="registro">
+			
+			<div data-role="content">
+			
+				<form>
+				
+					<div class="ui-field-contain">
+						<label for="nombre">Nombre</label>
+						<input type="text" name="nombre" id="nombre">
+					</div>
+					<div class="ui-field-contain">
+						<label for="ubicacion">Ubicacion</label>
+						<div class="ui-field-contain" name="ubicacion" id="ubicacion">
+								
+						</div>
+						<label for="ciudad">Ciudad</label>
+						<input type="text" name="ciudad" id="ciudad">
+					</div>
+					<div class="ui-field-contain">
+						<label for="telefono">Telefono</label>
+						<input type="text" name="telefono" id="telefono">
+					</div>
+					<div class="ui-field-contain">
+						<label for="estrellas">Estrellas</label>
+						<input type="text" name="estrellas" id="estrellas">
+					</div>
+					<a id="botonRegistrar" class="ui-btn">Registrar Hotel</a>
+					<a onclick="cambiarPagina('index')" class="ui-btn">Volver</a>
+			
+				</form>
+			</div>
+
+		</div>
+
+		<div data-role="page" id="listado">
+
+			<div data-role="header">
+				<h1>Lista Hoteles</h1>
+			</div>
+			<div data-role="content">
+				<table data-role="table" id="listadoHoteles" data-mode="reflow" class="ui-responsive table - stoke">
+					<thead>
+						<tr>
+							<th>Nombre</th>
+						</tr>
+					</thead>
+					<tbody id="tbodylistado">
+					</tbody>
+				</table>
+				<a onclick="cambiarPagina('index')" class="ui-btn">Volver</a>
+
+			</div>
+			
+		</div>
+
+		<div data-role="page" id="datosHotel">
+			
+			<div data-role="header">
+				<h1>Datos Hotel</h1>
+			</div>
+			<div data-role="content">
+				<div data-role="content" id="mostrarDatos">
+					
+				</div>
+				<a onclick="cambiarPagina('listado')" class="ui-btn">Lista Hoteles</a>
+			</div>
+
+		</div>
+
+	</body>
+</html>
